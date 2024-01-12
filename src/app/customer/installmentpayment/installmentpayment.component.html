@@ -1,0 +1,53 @@
+<section id="services" class="section parallax">
+    <!-- <div class="container"> -->
+  <div class="row">
+  <header>
+  <style>
+    .section {
+      padding: 0px !important;
+    }
+  </style>
+      <!-- start top -->
+      <div id="topnav" class="navbar navbar-fixed-top default">
+        <div class="navbar-inner">
+          <div class="container">
+            <!-- <div class="logo">
+              <a class="brand" href="index.html"><img src="../assets/img/logo.png" alt=""></a>
+            </div> -->
+            <div class="navigation">
+              <nav>
+                <ul class="nav pull-right">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="current"><a routerLink="/customer">Customer</a></li>
+                  <li><a routerLink="/customer">Log Out</a></li>
+
+                </ul>
+              </nav>
+            </div>
+            <!--/.nav-collapse -->
+          </div>
+        </div>
+      </div>
+      <!-- end top -->
+    </header>
+    <form #install="ngForm" class="mt-5">
+    <section class="vh-100 mt-5">
+        <div class="container-fluid h-custom mt-5">
+          <h1 style="text-align: center; color: white;">Choose an Installment Method</h1>
+
+          <div class="row d-flex justify-content-center align-items-center h-100 mt-5">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <div class="center-container">
+                  <div class="row">
+                    <div class="col-6"><input type="submit" class="large-button1"  value="2 Installment" (click)="twoinstall()" ></div>
+                    <div class="col-6"><input type="submit" class="large-button2"  value="3 Installment" (click)="threeinstall()"></div>
+                  </div>
+                  </div>
+            </div>
+            </div>
+            </div>
+            </section>
+            </form>
+    </div>
+    </section>
+    

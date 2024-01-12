@@ -1,0 +1,72 @@
+<section id="services" class="section parallax">
+  
+    <div class="container">
+  <div class="row">
+  <header>
+  
+      <!-- start top -->
+      <div id="topnav" class="navbar navbar-fixed-top default">
+        <div class="navbar-inner">
+          <div class="container">
+            <div class="navigation">
+              <nav>
+                <ul class="nav pull-right">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="current"><a routerLink="/servi">Customer Services</a></li>
+                  <li ><a routerLink="/servi">Log Out</a></li>
+
+  
+                </ul>
+              </nav>
+            </div>
+            <!--/.nav-collapse -->
+          </div>
+        </div>
+      </div>
+      <!-- end top -->
+    </header>
+    
+    <form>
+      <h1 style="text-align: center;color: aliceblue;">Pending Customer Details </h1>
+    <section class="vh-100">
+      <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+
+            <table >
+                <thead>
+                  <tr>
+                    <th>Customer Id</th>
+                    <th>Customer Name</th>
+                    <th>Mobile Number</th>
+                    <th>Email</th>
+                    <th>Due Date</th>
+                    <th>Previous Balance</th>
+                    <th>Current Balance</th>
+                    <th>Total Balance</th>
+                    <th>Days</th>
+                    <th>Type</th>
+                    <th>Installment Amount</th>
+                    <th>Send Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let c of unpaidlist">
+                    <td>{{c.id}}</td>
+                    <td>{{c.name}}</td>
+                    <td>{{c.mobile}}</td>
+                    <td>{{c.email}}</td>
+                    <td>{{c.duedate}}</td>
+                    <td>{{c.previousbill}}</td>
+                    <td>{{c.currentbill}}</td>
+                    <td>{{c.balance}}</td>
+                    <td>{{c.days}}</td>
+                    <td>{{c.type}}</td>
+                    <td>{{c.installmentamount}}</td>
+                  <td><button (click)="sendEmail(c)">Send</button></td></tr>
+                </tbody>
+                </table>
+
+            </div>
+            </div>
+            </section>
+          </form>

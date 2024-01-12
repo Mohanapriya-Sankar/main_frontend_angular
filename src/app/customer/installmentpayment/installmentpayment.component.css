@@ -1,0 +1,54 @@
+.center-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+    justify-content: center;  */
+  height: 100vh;
+  /* Centers vertically on the page */
+}
+
+.large-button {
+  padding: 20px 40px;
+  /* Adjust the padding for your desired button size */
+  font-size: 18px;
+  /* Adjust the font size as needed */
+  margin: 10px;
+  /* Add margin to separate the buttons */
+}
+
+.large-button1:hover {
+
+  background-color: white;
+  color: black;
+  font-style:'ostrich_sansblack';
+  border: 3px solid black;
+
+}
+.large-button1{
+background-color: transparent; border: 3px solid white;
+width: 250px;
+height: 100px;
+margin-right: 50px;
+font-style:'ostrich_sansblack';
+  font-size: large;
+  color: white;
+
+}
+
+.large-button2:hover {
+
+  background-color: white;
+  color: black;
+  font-style:'ostrich_sansblack';
+  border: 3px solid black;
+
+}
+.large-button2{
+  background-color: transparent; border: 3px solid white;
+  width: 250px;
+  height: 100px;
+margin-left: 50px;
+font-style:'ostrich_sansblack';
+  font-size: large;
+  color: white;
+}

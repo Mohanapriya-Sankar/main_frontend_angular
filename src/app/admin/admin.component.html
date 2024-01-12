@@ -1,0 +1,87 @@
+<form #culForm="ngForm">
+<section id="services" class="section parallax">
+  <!-- <div class="container"> -->
+<div class="row">
+<header>
+
+    <!-- start top -->
+    <div id="topnav" class="navbar navbar-fixed-top default">
+      <div class="navbar-inner">
+        <div class="container">
+          <!-- <div class="logo">
+            <a class="brand" href="index.html"><img src="../assets/img/logo.png" alt=""></a>
+          </div> -->
+          <div class="navigation">
+            <nav>
+              <ul class="nav pull-right">
+                <li><a href="index.html">Home</a></li>
+                <li class="current"><a routerLink="/admin">Admin</a></li>
+                <li><a routerLink="/servi">Customer Services</a></li>
+                <li><a routerLink="/customer">Customer</a></li>
+
+              </ul>
+            </nav>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <!-- end top -->
+  </header>
+  
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <h1 style="text-align: center; color: white;"> Admin Page</h1>
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form>
+
+  
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example3">Email address</label>
+              <input type="email" id="username" class="form-control form-control-lg"
+                placeholder="Enter a valid email address" [(ngModel)]="username" name="Name" >
+            </div>
+  
+            <!-- Password input -->
+            <!-- <div class="form-outline mb-3">
+              <label class="form-label" for="form3Example4">Password</label>
+              <input type="password" id="pass" class="form-control form-control-lg"
+                placeholder="Enter password" [(ngModel)]="password" name="password" #password="ngModel" required [class.is-invalid]="password.invalid && password.touched" pattern= >
+                <div *ngIf="password.touched">
+                  <div *ngIf="password.invalid">
+                      <small class="text-danger" *ngIf="password.errors?.['required']">Password Cannot be Empty</small>
+                        <small class="text-danger" *ngIf="password.errors?.['pattern']">Enter the valid Password</small>
+                  </div>    
+                  </div>
+            </div> -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example3">Password</label>
+              <input type="password" id="password" class="form-control form-control-lg"
+                placeholder="Enter your Password" [(ngModel)]="password" name="Pass" >
+              
+            </div>
+  
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="button" class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;" 
+               (click)="onSubmit()" >Login</button>
+              <!-- <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
+                  class="link-danger">Register</a></p> -->
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </section>
+ </div>
+ <!-- </div> -->
+ </section>
+</form>

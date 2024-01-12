@@ -1,0 +1,226 @@
+<section id="services" class="section parallax">
+  <!-- <div class="container"> -->
+<div class="row">
+<header>
+<style>
+  .section {
+    padding: 0px !important;
+  }
+</style>
+    <!-- start top -->
+    <div id="topnav" class="navbar navbar-fixed-top default">
+      <div class="navbar-inner">
+        <div class="container">
+          <!-- <div class="logo">
+            <a class="brand" href="index.html"><img src="../assets/img/logo.png" alt=""></a>
+          </div> -->
+          <div class="navigation">
+            <nav>
+              <ul class="nav pull-right">
+                <li><a href="index.html">Home</a></li>
+                <li class="current"><a routerLink="/customer">Customer</a></li>
+                <li><a routerLink="/customer">Log Out</a></li>
+
+
+              </ul>
+            </nav>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <!-- end top -->
+  </header>
+  
+  <!-- <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100"> -->
+       
+        <!-- Section: Design Block -->
+<section class="background-radial-gradient overflow-hidden">
+  <style>
+    .background-radial-gradient {
+      background-color: hsl(218, 41%, 15%);
+      background-image: radial-gradient(650px circle at 0% 0%,
+          hsl(218, 41%, 35%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%),
+        radial-gradient(1250px circle at 100% 100%,
+          hsl(218, 41%, 45%) 15%,
+          hsl(218, 41%, 30%) 35%,
+          hsl(218, 41%, 20%) 75%,
+          hsl(218, 41%, 19%) 80%,
+          transparent 100%);
+    }
+
+    #radius-shape-1 {
+      height: 220px;
+      width: 220px;
+      /* top: -60px; */
+      left: -130px;
+      background: radial-gradient(#44006b, #ad1fff);
+      overflow: hidden;
+    }
+
+    #radius-shape-2 {
+      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+      bottom: -60px;
+      right: -110px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(#2f3040, #ad1fff);
+      overflow: hidden;
+    }
+
+    .bg-glass {
+      background-color: hsla(0, 0%, 100%, 0.9) !important;
+      backdrop-filter: saturate(200%) blur(25px);
+    }
+  </style>
+
+  <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+    <div class="row gx-lg-5 align-items-center mb-5">
+      <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+        <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+          We offer secure and hassle-free bill payment <br />
+          <span style="color: hsl(218, 81%, 75%)">Fill the required details to complete the process</span>
+        </h1>
+       
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+        <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+
+        <div class="card bg-glass">
+          <div class="card-body px-4 py-5 px-md-5">
+            <form *ngIf="!paymentCard" class="was-validated" #empform="ngForm">
+              <!-- <div class="item" *ngFor="let e of responseData"> -->
+              <div class="form-outline mb-4">
+                <div class="text-center">
+                  <p>or pay using UPI ID:</p>
+                </div>
+
+              </div>
+               <!-- Email input -->
+               <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">Enter a Valid UPI Id</label>
+                <input type="email" id="form3Example3" class="form-control"  [(ngModel)]="id" name="Id" #Id="ngModel" required [class.is-invalid]="Id.invalid && Id.touched" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+
+                <div *ngIf="Id.touched">
+                  <div *ngIf="Id.invalid">
+                        <small class="text-danger" *ngIf="Id.errors?.['required']">Enter UPI Id</small>
+                  <small class="text-danger" *ngIf="Id.errors?.['pattern']">Enter a Valid UPI Id</small>
+                    </div>    
+                    </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="empform.form.invalid" (click)="submitAndHandleIssues()"  >
+              Pay {{responseData.balance}}
+              </button>
+
+
+              <!-- Register buttons -->
+              <div class="text-center">
+                <p>or pay using Card:</p>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block mb-4" (click)="paymentCard=!paymentCard">
+                Pay using Credit/Debit Card
+              </button>
+            </form>
+            <form #cusform="ngForm" *ngIf="paymentCard" class="was-validated">
+              <div class="form-outline mb-4">
+                <label class="form-label" for="cardholderName">Card Holder Name</label>
+                <input type="text" id="cardholderName" name="cardholderName" placeholder="Enter the Card Holder Name" pattern="^[A-Za-z\s-]+$" [(ngModel)]="cardholderName" required required #Id="ngModel"
+                [ngClass]="{'invalid': Id.invalid && Id.touched}">
+                <div *ngIf="Id.touched">
+                  <div *ngIf="Id.invalid">
+                        <small class="text-danger" *ngIf="Id.errors?.['required']">Card Holder Name is Required</small>
+                  <small class="text-danger" *ngIf="Id.errors?.['pattern']">Enter a Valid Card Holder Name</small>
+                    </div>    
+                    </div>
+              </div>
+               <!-- Email input -->
+               <div class="form-outline mb-4">
+                <label class="form-label" for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" pattern="^\d{16}$" [(ngModel)]="cardNumber" required #Name="ngModel"
+                [ngClass]="{'invalid': Name.invalid && Name.touched}">
+                <div *ngIf="Name.touched">
+                  <div *ngIf="Name.invalid">
+                        <small class="text-danger" *ngIf="Name.errors?.['required']">Card Number is Required</small>
+                  <small class="text-danger" *ngIf="Name.errors?.['pattern']">Enter a Valid Card Number</small>
+                    </div>    
+                    </div>
+              </div>
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="expiryDate">Expiry Date (MM/YY):</label>
+                    <input
+                    type="text"
+                    id="expiryDate"
+                    name="expiryDate"
+                    placeholder="MM/YY"
+                    pattern="^(0[1-9]|1[0-2])\/\d{2}$"
+                    [(ngModel)]="cardExpiryDate"
+                    required #date="ngModel"
+                    [ngClass]="{'invalid': date.invalid && date.touched}"
+                  >
+                  <div *ngIf="date.touched">
+                    <div *ngIf="date.invalid">
+                          <small class="text-danger" *ngIf="date.errors?.['required']">Expiration Month and Year is Required</small>
+                    <small class="text-danger" *ngIf="date.errors?.['pattern']">Invalid Details</small>
+                      </div>    
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <label class="form-label" for="cvv">Card CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="123" pattern="^\d{3,4}$"[(ngModel)]="cvv" required #num="ngModel"
+                    [ngClass]="{'invalid': num.invalid && num.touched}">
+                    <div *ngIf="num.touched">
+                      <div *ngIf="num.invalid">
+                            <small class="text-danger" *ngIf="num.errors?.['required']"> CVV number is required </small>
+                      <small class="text-danger" *ngIf="num.errors?.['pattern']">Enter a Valid CVV </small>
+                        </div>    
+                        </div>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="cusform.form.invalid" (click)="submitAndHandleIssues()" >Pay {{responseData.balance}}
+              </button>
+              <!-- Register buttons -->
+              <div class="text-center">
+                <p>or pay using UPI:</p>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4" (click)="paymentCard=!paymentCard">
+                Pay using UPI ID
+              </button>
+
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+</section>
+<!-- Section: Design Block -->
+
+       
+      </div>
+    <!-- </div> -->
+
+  </section>
+ <!-- </div> -->
+ <!-- </div> -->
+ <!-- </section> -->
+ 

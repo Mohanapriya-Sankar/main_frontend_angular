@@ -1,0 +1,86 @@
+<header>
+
+  <!-- start top -->
+  <div id="topnav" class="navbar navbar-fixed-top default">
+    <div class="navbar-inner">
+      <div class="container">
+        <!-- <div class="logo">
+          <a class="brand" href="index.html"><img src="../assets/img/logo.png" alt=""></a>
+        </div> -->
+        <div class="navigation">
+          <nav>
+            <ul class="nav pull-right">
+              <li ><a href="#featured">Home</a></li>
+              <li class="current"><a routerLink="/customer">Customer</a></li>
+              <li><a routerLink="/customer">Log Out</a></li>
+              
+              <!-- <li><a routerLink="/contact">Contact</a></li> -->
+              <!-- <li class="dropdown">
+                <a href="#">More</a>
+                <ul class="dropdown-menu">
+                  <li><a href="components.html" class="external">Components</a></li>
+                  <li><a href="icons.html" class="external">Icons</a></li>
+                </ul>
+              </li> -->
+            </ul>
+          </nav>
+        </div>
+        <!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+  <!-- end top -->
+</header>
+
+<!-- section services -->
+<section id="services" class="section parallax">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="headline">
+          <h3><span>Welcome to our Customer Page !</span></h3>
+        </div>
+      </div>
+      <div class="span12">
+        <div class="section-intro">
+          <p>
+            We understand that sometimes payment issues can arise. Don't worry, our team is here to help you navigate through any payment-related concerns.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span3">
+        <div class="well box aligncenter">
+          <h3>Payment</h3>
+          <p>
+            Avoid the last-minute rush – Secure your connection with a quick 'Pay Now'.
+          </p>
+          <a routerLink="/pay" class="btn btn-color">Pay Now</a>
+        </div>
+      </div>
+      <div class="span3">
+        <div class="well box aligncenter">
+          <h3>Installment Payment</h3>
+          <p>
+            Seize the day and seize the savings! Pay now for your postpaid installment bill
+          </p>
+          <a routerLink="/payoptions" class="btn btn-color" (click)="onSubmit()">Pay Now</a>
+        </div>
+      </div>
+      <div class="span3">
+        <div class="well box aligncenter">
+          <h3>Issues</h3>
+          <p>
+            If you encounter any challenges while paying your bill, our dedicated team is ready to assist you every step of the way.
+          </p>
+          <a routerLink="/other" class="btn btn-color">Others</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- end section services -->
+
+

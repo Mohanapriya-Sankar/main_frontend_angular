@@ -1,0 +1,83 @@
+<section id="services" class="section parallax">
+  <div class="container">
+<div class="row">
+<header>
+
+    <!-- start top -->
+    <div id="topnav" class="navbar navbar-fixed-top default">
+      <div class="navbar-inner">
+        <div class="container">
+          <!-- <div class="logo">
+            <a class="brand" href="index.html"><img src="../assets/img/logo.png" alt=""></a>
+          </div> -->
+          <div class="navigation">
+            <nav>
+              <ul class="nav pull-right">
+                <li><a href="index.html">Home</a></li>
+                <li ><a routerLink="/admin">Admin</a></li>
+                <li ><a routerLink="/servi">Customer Services</a></li>
+                <li class="current"><a routerLink="/customer">Customer</a></li>
+
+              </ul>
+            </nav>
+          </div>
+          <!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <!-- end top -->
+  </header>
+  
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <h1 style="text-align: center; color: white;">Customer Services Page</h1>
+        <!DOCTYPE html>
+<head>
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet"> -->
+</head>
+<div class="bg">
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form class="was-validated" #cusform="ngForm" >
+        <h3>Login Here</h3>
+        <div *ngIf="!otpSent">
+          <label for="username">Phone Number</label>
+          <input type="text" placeholder="Email or Phone" id="phone" [(ngModel)]="phone" name="phone" #phoneIn="ngModel" required [class.is-invalid]="phoneIn.invalid && phoneIn.touched" pattern="^\+\d{12}$"  >
+  <div *ngIf="phoneIn.touched">
+    <div *ngIf="phoneIn.invalid">
+      <small class="text-danger" *ngIf="phoneIn.errors?.['required']">Mobile Number cannot be empty</small>
+              <small class="text-danger" *ngIf="phoneIn.errors?.['pattern']">Enter a valid Mobile Number</small>
+    </div>
+  </div>
+          
+          <input type="submit" [disabled]="cusform.form.invalid"  (click)="generateOTP(cusform)" value="Verify Phone Number" id="log" style="background-color: #2f3040;">
+        </div>
+      <div *ngIf="otpSent && !otpVerified">
+        <label for="otps"> Verification Code</label>
+        <input type="text" placeholder="Enter the OTP" id="otps" [(ngModel)]="otps" name="otps">
+        <input type="submit"  (click)="validateOTP(cusform)" value="Verify OTP" id="otps" style="background-color: #2f3040;">
+
+        
+        <!-- <input type="submit" (click)="!otpVerified=otpVerified" value="Verify the OTP" id="otp" style="background-color: #2f3040;"> -->
+      </div>
+      <div *ngIf="otpVerified">
+
+        <h2>OTP Verified!</h2>
+    
+        <!-- Redirect to customer home page or show any relevant content -->
+    
+      </div>
+    </form>
+</div>
+      </div>
+    </div>
+
+  </section>
+ </div>
+ </div>
+ </section>
